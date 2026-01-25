@@ -10,13 +10,17 @@
 
     <script>
 
-        let n1 = parseFloat(prompt("digite um numero de 0 á 10"))
+        let n1 = parseFloat(prompt("digite a nota 1"))
 
-        let n2 = parseFloat(prompt("digite outro numero de 0 á 10"))
+        let n2 = parseFloat(prompt("digite a nota 2"))
 
         media = (n1 + n2) / 2
 
-        alert("a media e menor ou igual a 4? " + (media < 4) || ( (n1 < 0 || n2 < 0) ) )
+        // media < 4
+        // n1 == 0
+        // n2 == 0
+
+        alert("Esta reprovado? " + (media < 4 ||  n1 <= 0 || n2 <= 0 ) )
     </script>
 </body>
 </html>
