@@ -12,35 +12,20 @@
         let n1 = parseFloat(prompt("digita a nota 1"))
         let n2 = parseFloat(prompt("digita a nota 2"))
  
-        if (n1 <= 10 && n2 <= 10) {
-            let media = (n1 + n2) / 2
-            if (media > 4 && n1 > 0 && n2 > 0) {
-                //bloco verdade
-                alert("APROVADO")
-            } else {
-                //bloco mentira
-                alert("REPROVADO")
-            }
+
+        media = (n1 + n2) / 2   
+
+        if ( media > 4 && n1 > 0 && n2 > 0 ) {
+            // bloco verdade
+            alert("APROVADO")
+            // bloco mentira
         } else {
-            alert("Digite apenas números menores do que 10")
+            alert("REPROVADO")
         }
 
-        /*
-        if (n1 > 10 || n2 > 10) {
-            alert("Digite apenas números menores do que 10")        
-        } else {
-            let media = (n1 + n2) / 2
-            if (media > 4 && n1 > 0 && n2 > 0) {
-                //bloco verdade
-                alert("APROVADO")
-            } else {
-                //bloco mentira
-                alert("REPROVADO") 
-            }
-        }
-        */
+        alert("FIM DO PROGRAMA")
 
     </script>
 
 </body>
-</html> 
+</html>
