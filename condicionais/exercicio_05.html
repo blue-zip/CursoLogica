@@ -12,7 +12,11 @@
         let n1 = parseFloat(prompt("digita a nota 1"))
         let n2 = parseFloat(prompt("digita a nota 2"))
  
-        if (n1 <= 10 && n2 <= 10 && n1 >= 0 && n2 >= 0 && !isNaN(n1 , n2) ) {
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("digite apenas números")
+        } else if (n1 < 0 || n2 < 0 || n1 > 10 || n2 > 10) {
+            alert("Digite apenas números entre 0 e 10")
+        } else {
             let media = (n1 + n2) / 2
             if (media > 4 && n1 > 0 && n2 > 0) {
                 //bloco verdade
@@ -21,12 +25,12 @@
                 //bloco mentira
                 alert("REPROVADO")
             }
-        } else {
-            alert("Digite apenas números entre 0 e 10")
         }
 
+        alert("fim do programa")
+
         /*
-        if (n1 > 10 || n2 > 10 || n1 < 0 || n2 > 0) {
+        if (n1 > 10 || n2 > 10 || n1 < 0 || n2 > 0 || isNaN(n1 , n2) ) {
             alert("Digite apenas números menores do que 10")        
         } else {
             let media = (n1 + n2) / 2
