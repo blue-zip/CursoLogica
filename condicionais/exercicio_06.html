@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Desafio </h1>
+
+    <script>
+
+        let n = NaN
+
+        switch (n) {
+
+            case Number(n):
+                alert("esta variavel e do tipo: Number ")
+                break
+            case String(n):
+                alert("esta variavel e do tipo: String ")
+                break
+            case true || false :
+                alert("esta variavel e do tipo: Boolean ")
+                break
+            case undefined:
+                alert("esta variavel e do tipo: Undefined")
+                break
+            /*
+            case null:
+                alert("esta variavel e do tipo: Null")
+                break
+            case NaN === n:
+                alert("esta variavel e do tipo: NaN ")
+                break
+            */
+            default:
+                alert("não e possivel identificar o tipo da variavel")
+                break
+            }
+            
+    </script>
+</body>
+</html>
