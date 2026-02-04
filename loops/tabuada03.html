@@ -10,18 +10,20 @@
     <script>
         let n = parseFloat(prompt("Digite um número"))
 
-        let contador = 0
         
-        // if (n != NaN) {
+        
+        if (!isNaN(n)) {
+            let contador = 0
+
             while (contador <= 1000) {
                 document.write(n + " x " + contador + ": " + n * contador + "<br>")
                 contador++
             }
-        /*
+        
         } else {
             document.write("digite apenas números" + "<br>")
          }
-        */
+        
 
         document.write("Fim do programa")
     </script>
