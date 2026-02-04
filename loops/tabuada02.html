@@ -8,11 +8,22 @@
 <body>
     <h1>Desafio 5 - tabuada</h1>
     <script>
-        let n = Number(prompt("Digite um número"))
+        let n = parseFloat(prompt("Digite um número"))
 
         let contador = 0
-
-
+        
+        // if (n != NaN) {
+            while (contador <= 1000) {
+                document.write(n + " x " + contador + ": " + n * contador + "<br>")
+                contador++
+            }
+        /*
+        } else {
+            document.write("digite um número" + "<br>")
+         }
+        */
+       
+        document.write("Fim do programa")
     </script>
 </body>
 </html>
