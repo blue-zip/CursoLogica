@@ -12,15 +12,36 @@
         let dado1 = parseInt(Math.random() * 6 + 1)
         let dado2 = parseInt(Math.random() * 6 + 1)
 
-        let contador = 0
+        dado1 = 3
+        dado2 = 3
 
-        while(dado1 !== dado2){
-            let dado1 = parseInt(Math.random() * 6 + 1)
-            let dado2 = parseInt(Math.random() * 6 + 1)
+        let contador = 1
+  
+        while (dado1 !== dado2) {
+            dado1 = parseInt(Math.random() * 6 + 1)
+            dado2 = parseInt(Math.random() * 6 + 1)
             console.log(dado1, dado2)
             contador++
-        } console.log("Os dados foram jogados " + contador + " vezes. E o número repetido foi o " + dado1)
+        }
+        console.log("Os dados foram jogados " + contador + " vezes. E o número repetido foi o " + dado1)
 
+        console.log("--------------------------------")
+
+        dado1 = parseInt(Math.random() * 6 + 1)
+        dado2 = parseInt(Math.random() * 6 + 1)
+        contador = 1
+
+        dado1 = 3
+        dado2 = 3
+
+        do {
+            dado1 = parseInt(Math.random() * 6 + 1)
+            dado2 = parseInt(Math.random() * 6 + 1)
+            console.log(dado1, dado2)
+            contador++  
+        } while (dado1 !== dado2)
+
+        console.log("Os dados foram jogados " + contador + " vezes. E o número repetido foi o " + dado1)
     </script>
 </body>
 </html>
