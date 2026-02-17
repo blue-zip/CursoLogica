@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>loops - dados</h1>
+    <script>
+        
+        let dado1 = parseInt(Math.random() * 6 + 1)
+        let dado2 = parseInt(Math.random() * 6 + 1)
+        let contador = 0
+        let pares = 0
+
+        
+
+        do {
+            console.log(dado1, dado2)
+            dado1 = parseInt(Math.random() * 6 + 1)
+            dado2 = parseInt(Math.random() * 6 + 1)
+            if (((dado1 + dado2) % 2) === 0 ) {
+                pares += 1
+            }
+            contador++  
+        } while (pares < 10)
+
+        console.log("Os dados foram jogados " + contador + " vezes.")
+    </script>
+</body>
+</html>
