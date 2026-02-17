@@ -15,11 +15,15 @@
         while (true) {
             let dado1 = parseInt(Math.random() * 6) + 1
             let dado2 = parseInt(Math.random() * 6) + 1
-
+            
             console.log(dado1, dado2, quantasVezesDadosJogados, quantasVezesASomaEhPar)
+            if (dado1 === dado2) {
+                continue
+            }
+
             quantasVezesDadosJogados++
 
-            if ((dado1 + dado2) % 2 === 0 && (dado1 !== dado2)) {
+            if ((dado1 + dado2) % 2 === 0) {
                 quantasVezesASomaEhPar++
             }
 
