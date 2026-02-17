@@ -9,24 +9,25 @@
     <h1>loops - dados</h1>
     <script>
         
-        let dado1 = parseInt(Math.random() * 6 + 1)
-        let dado2 = parseInt(Math.random() * 6 + 1)
-        let contador = 0
-        let pares = 0
+        let quantasVezesDadosJogados = 0
+        let quantasVezesASomaEhPar = 0
 
-        
+        while (true) {
+            let dado1 = parseInt(Math.random() * 6) + 1
+            let dado2 = parseInt(Math.random() * 6) + 1
 
-        do {
-            console.log(dado1, dado2)
-            dado1 = parseInt(Math.random() * 6 + 1)
-            dado2 = parseInt(Math.random() * 6 + 1)
-            if (((dado1 + dado2) % 2) === 0 ) {
-                pares += 1
+            console.log(dado1, dado2, quantasVezesDadosJogados, quantasVezesASomaEhPar)
+            quantasVezesDadosJogados++
+
+            if ((dado1 + dado2) % 2 === 0) {
+                quantasVezesASomaEhPar++
             }
-            contador++  
-        } while (pares < 10)
 
-        console.log("Os dados foram jogados " + contador + " vezes.")
+            if (quantasVezesASomaEhPar >= 10) {
+                break
+            }
+        }
+        console.log("Os dados foram jogados " + quantasVezesDadosJogados + " vezes")
     </script>
 </body>
 </html>
