@@ -14,14 +14,14 @@
         
 
         for (let tabuada = 0; tabuada < 100; ) {
+            document.write(tabuada + "<br>")
             tabuada++
+            dado = parseInt(Math.random() * 100 ) + 1
+            if ((tabuada % dado) === 0) {
+                break
+            }
             if ((tabuada % 10) === 0 || !tabuada === 0 ) {
                 continue
-            }
-            document.write(tabuada + "<br>")
-            dado = parseInt(Math.random() * 100 ) + 1
-            if (tabuada === dado) {
-                break
             }
         }
         document.write("fim do loop")
