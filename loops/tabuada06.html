@@ -10,16 +10,21 @@
 
     <script>
 
-        let sequencia = 0
         let dado = undefined
+        
 
-        for ( (dado % sequencia) !== 0; ;) {
-            if ()
-            document.write(sequencia + "<br>")
-            sequencia++
-            dado = (Math.random() * 100) + 1
+        for (let tabuada = 0; tabuada < 100; ) {
+            tabuada++
+            if ((tabuada % 10) === 0 || !tabuada === 0 ) {
+                continue
+            }
+            document.write(tabuada + "<br>")
+            dado = parseInt(Math.random() * 100 ) + 1
+            if (tabuada === dado) {
+                break
+            }
         }
-        console.log("fim do loop")
+        document.write("fim do loop")
 
     </script>
 </body>
