@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Desafio 6 - tabuada</h1>
+    <script>
+    
+    let contador = 0
+
+    for (let ano = 1004; ano <= 2024; ano += 1) {
+        if ((ano % 4) === 0 ) {
+            if (!((ano % 100) === 0)) {
+            document.write(ano + "<br>")
+            } else {
+                continue
+            }
+        } 
+        if ((ano % 400) === 0) {
+            document.write(ano + "<br>")
+        }
+    contador++
+    }
+
+    console.log(contador)
+
+    </script>
+</body>
+</html>
