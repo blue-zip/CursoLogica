@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        
+        let numeros = [1, 2, 3, 4, 5, 6, 7, 8 ]
+
+        let numeros2 = []
+
+        for (let i = 0; i < numeros.length; i++) {
+            let numero = numeros[i] * 2
+
+            //numeros2[numeros2.length] = numero
+            numeros2.push(numero) // metodo push "empurra" um valor no final do array
+
+        }
+ 
+        console.log(numeros2)
+    </script>
+</body>
+</html>
