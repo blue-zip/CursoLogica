@@ -13,9 +13,17 @@
         let nomes = ["João", "Maria", "Daniel", "Beatriz", "Ricardo", "Luciane"] // sintaxe literal
         //let nomes = new Array("João", "Maria", "Daniel", "Beatriz") // sintaxe função construtora
 
+        let nomeDigitado = prompt("Digite seu nome")
+
+        nomes[nomes.length] = nomeDigitado
+        
+
         for (let i = 0; i < nomes.length; i++) {
             document.write("nome: " + nomes[i] + "<br>")
         }
+
+
+        document.write("A lista de nomes possui " + nomes.length + " elementos")
     </script>
 </body>
 </html>
