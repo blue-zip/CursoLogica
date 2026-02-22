@@ -17,7 +17,7 @@
         for (let i = 0; i < numeros.length; i++ ) {
             let n = numeros[i]
             
-            if (typeof n === "number" ) {
+            if (typeof n === "number" && !isNaN(numeros[i]) ) {
                 // somente os numeros de fato
                 soma = soma + n
             }
