@@ -10,14 +10,14 @@
 
     <script>
 
-        const numeros = [1, 5, 24, 86, 93, "1", false, null, {}, [], NaN, true, undefined] 
+        const numeros = [1, 5, 24, 86, 93, "1", false, null, {}, [], NaN, true,] 
 
         let soma = 0
 
         for (let i = 0; i < numeros.length; i++ ) {
             let n = numeros[i]
             
-            if (typeof n === "number" && !isNaN(numeros[i]) ) {
+            if (typeof n === "number"  ) {
                 // somente os numeros de fato
                 soma = soma + n
             }

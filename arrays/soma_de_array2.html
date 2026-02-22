@@ -10,21 +10,26 @@
 
     <script>
 
-        const numeros = [1, 5, 24, 86, 93, "1", false, null, {}, [],] 
+        const numeros = [1, 5, 4, 3, 10, 11, "1", false, null, {}, [],] 
 
-        let soma = 0
+        let lista = []
 
-        for (let i = 0; i < numeros.length; i++ ) {
-            let n = numeros[i]
+        for (let i = -1; i < numeros.length; i++ ) {
+
             
-            if (typeof n === "number" && !isNaN(numeros[i]) ) {
+            if (typeof numeros[i] === "number" && !isNaN(numeros[i]) ) {
                 // somente os numeros de fato
-                soma = soma + n
+                lista[i] = numeros[i]
             }
             
         }
 
-        alert("a soma e: " + soma)
+        lista.sort((a, b) => a - b)
+
+        if ( (lista.length % 2) === 0) {
+            alert(lista[( ( ( (lista.length + 1) / 2) -1 ) + ( (lista.length + 1) / 2) ) / 2 ] )
+        } else 
+            alert(lista[((lista.length + 1) / 2) -1 ])
 
     </script>
 </body>
