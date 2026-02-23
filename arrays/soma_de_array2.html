@@ -27,9 +27,12 @@
         lista.sort((a, b) => a - b)
 
         if ( (lista.length % 2) === 0) {
-            alert(lista[( ( ( (lista.length + 1) / 2) -1 ) + ( (lista.length + 1) / 2) ) / 2 ] )
+            let dividido = lista[parseInt(((lista.length + 1) / 2) -1) ]
+            let divisor = lista[parseInt(((lista.length + 1) / 2) ) ]
+            alert( (dividido + divisor) / 2)
         } else 
             alert(lista[((lista.length + 1) / 2) -1 ])
+
 
     </script>
 </body>
