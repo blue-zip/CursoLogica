@@ -10,20 +10,19 @@
 
     <script>
 
-        lista = [1, 2, NaN]
+        const numeros = [2, 3, 5, 6, 2, 1, 0, 9, "<gfhg>"]
 
-        let  verificacao
+        let encontrou = false
 
-        for (i = 0; i < lista.length; i++) {
-            if (lista[i] === null || lista[i] === undefined || isNaN(lista[i]) ) {
-                verificacao = true
+        for (let i = 0; i < numeros.length; i++) {
+            let n = numeros[i]
+            if (n === null || n === undefined || isNaN(n)) {
+                encontrou = true
                 break
-            } else {
-                verificacao = false
             }
-        } 
+        }
 
-        alert(verificacao)
+        alert("Encontrou null, undefined, ou NaN? " + encontrou)
 
     </script>
 </body>
