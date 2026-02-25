@@ -15,17 +15,18 @@
 
         let soma = 0
 
-        for (let i = 0; i < numeros.length; i++ ) {
-            if (!((numeros % 2) === 0)) {
-                lista[i] = numeros[i]
+       
+
+        for (let i = 0; i < numeros.length; i++) {  
+            if (!((numeros[i] % 2) === 0)) {
+                soma = soma + numeros[i]
+                
             }
              
             
         }
 
-        for (let i = -1; i < numeros.length; i++) {
-            soma = soma + lista[i]
-        }
+
 
         alert("A soma e: " + soma)
 
