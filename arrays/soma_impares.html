@@ -11,24 +11,18 @@
     <script>
         const numeros = [1, 5, 4, 3, 10, 11, 4, 8,] 
 
-        let lista = []
-
         let soma = 0
 
-       
-
-        for (let i = 0; i < numeros.length; i++) {  
-            if (!((numeros[i] % 2) === 0)) {
-                soma = soma + numeros[i]
-                
+        for (let i = 0; i < numeros.length; i++) {
+            let n = numeros[i]
+            // if (n % 2 !== 0) {
+             if (!(n % 2 === 0)) {
+                soma += n
             }
-             
-            
         }
 
 
-
-        alert("A soma e: " + soma)
+        alert("A soma dos impares é: " + soma)
 
     </script>
 </body>
