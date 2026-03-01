@@ -9,6 +9,7 @@
     <h1>Objetos</h1>
 
     <script>
+        //Problema #1
         const caneta = {
             nome: "caneta",
             preco: 2,
@@ -16,7 +17,18 @@
         }
 
         document.write(caneta.nome + " custa R$ " + caneta.preco + " e há " + caneta.quantidade + " unidades em estoque <br>")
-        document.write(`${caneta.nome} custa R$${caneta.preco} e há ${caneta.quantidade} unidades em estoque`)
+        document.write(`${caneta.nome} custa R$${caneta.preco} e há ${caneta.quantidade} unidades em estoque <br>`)
+
+        //Problema #2
+        const carro = {
+            modelo: "Uno",  
+            ano: 2023,
+            km: 10000,
+            combustivel: "gasolina",
+            litrosConsumidos: 625
+        }
+
+        document.write(`O carro ${carro.modelo} ano ${carro.ano} fez em media ${carro.km / carro.litrosConsumidos} Km/l de  ${carro.combustivel}`)
     </script>
 </body>
 </html>
