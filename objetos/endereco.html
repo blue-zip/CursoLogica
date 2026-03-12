@@ -10,19 +10,16 @@
 
     <script>
     
-
-      
-        const carro = {
-            marca:  "Fiat",
-            modelo: "Uno",  
-            ano: 2023,
-            km: 10000,
-            combustivel: "gasolina",
-            litrosConsumidos: 625
+        const pessoa = {
+            nome: "João",
+            sobrenome: "Fagundes",
+            endereco:  {
+                rua: "Rua das Tulipas",
+                numero: 302
+            }
         }
-        
-
-        document.write(`O carro ${carro.marca} ${carro.modelo} ano ${carro.ano} fez em media ${carro.km / carro.litrosConsumidos} Km/l de  ${carro.combustivel}`)
+      
+        document.write(`o ${pessoa.nome} ${pessoa.sobrenome} mora na ${pessoa.endereco.rua} no numero ${pessoa.endereco.numero} `)
     </script>
 </body>
 </html>
