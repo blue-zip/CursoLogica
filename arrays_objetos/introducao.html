@@ -7,10 +7,10 @@
 </head>
 <body>
 
-    //<ul id="listaPessoas">
-        <li>Daniel: daniel@server</li>
+    <ul id="listaPessoas">
+        <!--<li>Daniel: daniel@server</li>
         <li>Maria: maria@server</li>
-        <li>João: joão@server</li>
+        <li>João: joão@server</li>-->
     </ul>
     
     <script>
@@ -24,10 +24,10 @@
 
         const listaPessoas = document.getElementById("listaPessoas")
 
-        // for(let i = 0; i < pessoas.length; i++) {
-        //    console.log(pessoas[i].email)
-        //    listaPessoas.innerHTML += "<li> "+ pessoas[i].nome +": "+ pessoas[i].email +"</li>" 
-        //}
+        for(let i = 0; i < pessoas.length; i++) {
+            console.log(pessoas[i].email)
+            listaPessoas.innerHTML += "<li> "+ pessoas[i].nome +": "+ pessoas[i].email +"</li>" 
+        }
 
         
     </script>
