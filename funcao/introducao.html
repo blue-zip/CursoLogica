@@ -8,7 +8,7 @@
 <body>
     <h1>Função</h1>
 
-    <input type="number"  id="number">
+    <input type="number"  id="number" value="1">
     <button onclick="mostrarTabuada()">Mostrar tabuada</button>
     <button onclick="limparTabuada()">Limpar tabuada</button>
     <div id="output"></div>
@@ -21,19 +21,24 @@
         let tabuadaHTML = ""
 
         function mostrarTabuada(){
-            tabuadaHTML = ""
             const inputValue = parseFloat(input.value)
+
+            limparTabuada()
             
             for(let i = 1; i <= 100; i++){
-                tabuadaHTML += `${i} x ${inputValue} = ${i * inputValue} <br>`
+                tabuadaHTML += `${inputValue} x ${i} = ${i * inputValue} <br>`
             }
 
             output.innerHTML = tabuadaHTML
         }
 
+    
         function limparTabuada(){
+            tabuadaHTML = ""
             output.innerHTML = ""
         }
+
+        mostrarTabuada()
 
     </script>
 </body>
