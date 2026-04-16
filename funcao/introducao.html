@@ -15,11 +15,18 @@
     <script>
 
         const input = document.getElementById("number")
-        
+        let output = document.getElementById("output")
+        i = 0
+
         function mostrarTabuada(){
             const inputValue = input.value
-            alert("cliquei no botão e o numero é " + inputValue)
+            while(i < 10){
+                output.innerHTML += inputValue + " X " + i + " = " + (inputValue * i) + "<br />"
+                i++
+            }
         }
+
+
 
     </script>
 </body>
