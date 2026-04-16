@@ -10,23 +10,30 @@
 
     <input type="number"  id="number">
     <button onclick="mostrarTabuada()">Mostrar tabuada</button>
+    <button onclick="limparTabuada()">Limpar tabuada</button>
     <div id="output"></div>
 
     <script>
 
         const input = document.getElementById("number")
-        let output = document.getElementById("output")
-        i = 0
+        const output = document.getElementById("output")
+
+        let tabuadaHTML = ""
 
         function mostrarTabuada(){
-            const inputValue = input.value
-            while(i < 10){
-                output.innerHTML += inputValue + " X " + i + " = " + (inputValue * i) + "<br />"
-                i++
+            tabuadaHTML = ""
+            const inputValue = parseFloat(input.value)
+            
+            for(let i = 1; i <= 100; i++){
+                tabuadaHTML += `${i} x ${inputValue} = ${i * inputValue} <br>`
             }
+
+            output.innerHTML = tabuadaHTML
         }
 
-
+        function limparTabuada(){
+            output.innerHTML = ""
+        }
 
     </script>
 </body>
