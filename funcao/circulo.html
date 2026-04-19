@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Função área do círculo</title>
+    <title>função area do Círculo</title>
 </head>
 <body>
-
-    <h1>Função área do círculo</h1>
+    <h1>função area do Círculo</h1>
 
     <label>Raio
         <input type="number" id="raio">
     </label>
 
-    <button onclick="areaCirculo()">Calcular a area</button>
-
-    <div id="resultado"></div>
+    <button onclick="mostrarArea()">Calcular a área</button>
+    <br>
+    <output id="output"></output>
 
     <script>
-        
-        const raio = document.getElementById("raio")
-        const resultado = document.getElementById("resultado")
+        const base = document.getElementById("base")
+        const output = document.getElementById("output")
 
-        function areaCirculo() {
-            r = raio.value
+        function mostrarArea(){
+            let raioValue = parseFloat(raio.value)
+            const pi = Math.PI
+            let area = pi * raioValue * raioValue // raiovalue ** 2
 
-            resultado.innerHTML = (Math.PI * (r * r)) + "²"
-
+            output.innerHTML = `A área da circunferência de raio ${raioValue} é ${area}`
         }
-
-        
-
     </script>
 </body>
 </html>
