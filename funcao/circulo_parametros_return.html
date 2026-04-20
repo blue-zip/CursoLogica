@@ -23,13 +23,31 @@
     <output id="output"></output>
 
     <script>
-        const base = document.getElementById("base")
-        const output = document.getElementById("output")
+        let raio = document.getElementById("raio")
+        let output = document.getElementById("output")
 
         function mostrarAreaDoPromptAlert() {
             let raio = parseFloat(prompt("Digite o raio"))
             let mensagem = mostrarArea(raio)
             alert(mensagem)
+        }
+
+        function mostrarAreaDoInputAlert() {
+            let raioValue = parseFloat(raio.value)
+            let mensagem = mostrarArea(raioValue)
+            alert(mensagem)
+        }
+
+        function mostrarAreaDoPromptOutput() {
+            let raio = parseFloat(prompt("Digite o raio"))
+            let mensagem = mostrarArea(raio)
+            output.innerHTML =  mensagem
+        }
+
+        function mostrarAreaDoInputOutput() {
+            let raioValue = parseFloat(raio.value)
+            let mensagem = mostrarArea(raioValue)
+            output.innerHTML =  mensagem
         }
 
         function mostrarArea(raio) {
