@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>função area do Círculo</title>
+</head>
+<body>
+    <h1>função area do Círculo</h1>
+
+    <label>Raio
+        <input type="number" id="raio">
+    </label>
+    <br>
+    <button onclick="mostrarAreaDoPromptAlert()">Calcular a área do prompt e mostrar no alert</button>
+    <br>
+    <button onclick="mostrarAreaDoInputAlert()">Calcular a área do input e mostrar no alert</button>
+    <br>
+    <button onclick="mostrarAreaDoPromptOutput()">Calcular a área do prompt e mostrar no output</button>
+    <br>
+    <button onclick="mostrarAreaDoInputOutput()">Calcular a área do input e mostrar no output</button>
+    <br>
+    <output id="output"></output>
+
+    <script>
+        const base = document.getElementById("base")
+        const output = document.getElementById("output")
+
+        function mostrarAreaDoPromptAlert() {
+            let raio = parseFloat(prompt("Digite o raio"))
+            let mensagem = mostrarArea(raio)
+            alert(mensagem)
+        }
+
+        function mostrarArea(raio) {
+            const pi = Math.PI
+            let area = pi * raio * raio // _raio ** 2
+
+            return  `A área da circunferência de raio ${raio} é ${area}`
+        }
+
+        
+    </script>
+</body>
+</html>
