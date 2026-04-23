@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>função somar dois numeros</title>
+</head>
+<body>
+    <h1>função somar dois numeros</h1>
+
+    <label>Primeiro numero
+        <input type="number" id="numero1">
+    </label>
+    <br>
+    <label>Primeiro numero
+        <input type="number" id="numero2">
+    </label>
+    <br>
+    <button onclick="somar()">somar</button>
+
+    <br>
+    <output id="output"></output>
+
+    <script>
+ 
+        let numero1 = document.getElementById("numero1")
+        let numero2 = document.getElementById("numero2")
+        let output = document.getElementById("output")
+
+        function somar() {
+            let n1Value = parseFloat(numero1.value)
+            let n2Value = parseFloat(numero2.value)
+
+            output.innerHTML = `a soma de ${n1Value} e ${n2Value} e igual ${n1Value + n2Value}`
+            
+        }
+
+    </script>
+</body>
+</html>
