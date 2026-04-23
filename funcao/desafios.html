@@ -14,9 +14,22 @@
         function somar(n1, n2) {
             return n1 + n2
         }
-        // console.log(somar(2, 4))
-        let resultado = somar(2, 4)
-        console.log(resultado)
+
+        function calcular(n1, n2, operacao) {
+            if (operacao == "+") {
+                return n1 + n2
+            } else if (operacao == "-") {
+                return n1 - n2
+            } else if (operacao == "*") {
+                return n1 * n2
+            } else if (operacao == "/") {
+                return n1 / n2
+            } else  {
+                return `${operacao} não e uma das operações suportadas por este programa`
+            }
+        }
+
+        console.log(calcular(3,3,"/"))
 
     </script>
 
