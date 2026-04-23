@@ -28,26 +28,26 @@
 
         function mostrarAreaDoPromptAlert() {
             let raio = parseFloat(prompt("Digite o raio"))
-            let mensagem = calcularArea(raio)
-            alert(mensagem)
+            let area = calcularArea(raio)
+            alert(`A área da circunferência de raio ${raio} é ${area}`)
         }
 
         function mostrarAreaDoInputAlert() {
             let raioInput = parseFloat(raio.value)
-            let mensagem = calcularArea(raioInput)
-            alert(mensagem)
+            let area = calcularArea(raioInput)
+            alert(`A área da circunferência de raio ${raioInput} é ${area}!`)
         }
 
         function mostrarAreaDoPromptOutput() {
             let raio = parseFloat(prompt("Digite o raio"))
-            let mensagem = calcularArea(raio)
-            output.innerHTML =  mensagem
+            let area = calcularArea(raio)
+            output.innerHTML =  `A área da circunferência de raio ${raio} vindo do prompt é ${area}`
         }
 
         function mostrarAreaDoInputOutput() {
             let raioInput = parseFloat(raio.value)
-            let mensagem = calcularArea(raioInput)
-            output.innerHTML =  mensagem
+            let area = calcularArea(raioInput)
+            output.innerHTML =  `A área da circunferência de raio ${raioInput} vindo do input é ${area}`
         }
 
         function calcularArea(raio) {
