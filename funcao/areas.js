@@ -13,3 +13,10 @@ function calcularAreaTriangulo(b, a) {
     }
     return (b * a) / 2
 }
+
+function calcularAreaCirculo(r) {
+    if (typeof r !== "number") {
+        throw new Error("calcularAreaCirculo aceita um parâmetro do tipo number")
+    }
+    return Math.PI * (r * r)
+}

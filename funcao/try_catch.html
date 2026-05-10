@@ -49,6 +49,12 @@
             console.log(e)
         }
 
+        try{
+            let areaCirculo = calcularAreaCirculo("R")
+            document.getElementById("output").innerHTML = `a area do circulo ${areaCirculo}`
+        }catch(e) {
+            console.log(e)
+        }
 
         alert("fim do programa")
 
