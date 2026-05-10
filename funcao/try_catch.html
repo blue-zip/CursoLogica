@@ -35,8 +35,23 @@
     <script src="areas.js"></script>
 
     <script>
+        try{
+            console.log(calcularAreaRetangulo(2, "r"))
+        } catch(e) {
+            alert(`deu ruim: ${e.message} `)
+        }
 
-        console.log(calcularAreaRetangulo(2, "t"))
+        try{
+            let areaTriangulo = calcularAreaRetangulo(3, "!")
+            document.getElementById("output").innerHTML = `a area do triangulo ${areaTriangulo}`
+
+        }catch(e) {
+            console.log(e)
+        }
+
+
+        alert("fim do programa")
+
 
     </script>
 </body>
