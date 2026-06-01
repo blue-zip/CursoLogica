@@ -20,11 +20,21 @@
             constructor(nome, quantidadeEstoque) {
                 console.log("construtor chamado")
                 this.nome = nome 
-                this.quantidadeEstoque = (quantidade)
+                this.quantidadeEstoque = (quantidadeEstoque < 0) ? 0 : quantidadeEstoque 
             }
 
             comprar(quantidade){ 
+                if(quantidade < 0) {
+                    throw Error("Quantidade não pode ser negativa")
+                }
+
+                if(quantidade > this.quantidadeEstoque){
+                    console.log("Não há quantidade suficiente para finalizar a compra")
+                    return null
+                }
+
                 this.quantidadeEstoque -= quantidade
+                console.log(`Você comprou ${quantidade}  unidades do produto ${this.nome}`)
             }
 
             adicionar(quantidade){
