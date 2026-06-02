@@ -38,7 +38,11 @@
             }
 
             adicionar(quantidade){
+                if(quantidade < 0) {
+                    throw Error("Quantidade não pode ser negativa")
+                }
                 this.quantidadeEstoque += quantidade
+                console.log(`Você adicinou ${quantidade}  unidades do produto ${this.nome}`)
             }
         }
 
