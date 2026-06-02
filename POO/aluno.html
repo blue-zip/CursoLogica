@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno</title>
+</head>
+<body>
+    <script>
+        class aluno {
+            constructor(nomeAluno, nomeCurso) {
+                this.nome = nomeAluno
+                this.curso = nomeCurso
+            }
+
+            informarNotas(nota1, nota2, nota3, nota4){
+                this.notas = [nota1, nota2, nota3, nota4]
+            }
+
+            calcularMedia(){
+                this.media = (this.notas[0] + this.notas[1] + this.notas[2] + this.notas[3]) / 4
+                console.log(`A media do(a) aluno(a) ${this.nome} é ${this.media}`)
+            }
+        }
+
+        const maria = new aluno("Maria", "Portugues")
+
+    </script>
+</body>
+</html>
