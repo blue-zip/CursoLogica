@@ -44,6 +44,10 @@
                 this.quantidadeEstoque += quantidade
                 console.log(`Você adicinou ${quantidade}  unidades do produto ${this.nome}`)
             }
+
+            verificarEstoque(){
+                console.log(`Temos ${this.quantidadeEstoque} unidades do produto ${this.nome}`)
+            }
         }
 
         const caneta = new Produto("caneta", 10)
