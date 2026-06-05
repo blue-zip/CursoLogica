@@ -3,44 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aluno</title>
+    <title>POO</title>
 </head>
 <body>
     <script>
-        class aluno {
-            constructor(nomeAluno, nomeCurso) {
-                this.nome = nomeAluno
-                this.curso = nomeCurso
-                this.notas = []
+       class  Produto {
+            #estoque
+            constructor(nome) {
+                this.#estoque = 0
+                this.nome = nome
             }
 
-            adicionarNotas(n1, n2, n3, n4){
-                this.notas = [n1, n2, n3, n4]
-            }
-
-            #calcularMedia() {
-                const soma = this.notas[0] + this.notas[1] + this.notas[2] + this.notas[3]
-                const media = soma / 4
-                return media
-            }
-
-            mostrarMedia() {
-                if (this.notas.lenght === 0) {
-                    console.log(`${this.nome} do curso ${this.curso} não possui notas`)
-                    return
+            comprar(quantidade) {
+                if (quantidade < this.#estoque) {
+                    this.#removerDoEstoque(quantidade)
+                    console.log("O estoque de", this.nome, "foi atualizado")
+                } else {
+                    console.log("quantidade insuficiente")
                 }
-                const media = this.#calcularMedia()
-                console.log(`O(a) aluno(a) ${this.nome} do curso ${this.curso} tem média ${media}`)
             }
-        }
 
-        const maria = new aluno("Maria", "Portugues")
+            adicionarAoEstoque(quantidade) {
+                this.#estoque += quantidade
+            }
 
-        maria.adicionarNotas(3, 5, 7, 1)
-        maria.mostrarMedia()
-
-        const daniel = new aluno("Maria", "HTML")
-
+            #removerDoEstoque(quantidade) {
+                this.#estoque -= quantidade
+            }
+       }
+       
+       const caneta = new Produto("caneta")
+       caneta.adicionarAoEstoque(10)
+       caneta.comprar(2)
+       
+    
     </script>
 </body>
 </html>
