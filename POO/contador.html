@@ -7,33 +7,25 @@
 </head>
 <body>
     <script>
-       class Contador {
-            constructor(nome) {
-                this.nome = nome
-                this.valor = 0
+        class Contador { 
+            #contador // propriedade privada
+            constructor() {
+                this.#contador = 0
             }
 
             incrementar() {
-                this.valor += 1
+                this.#contador++
             }
 
             valorAtual() {
-                return this.valor
+                return this.#contador
             }
-       }
+        }
 
-       const numero = new Contador("numero")
+        const contador = new Contador()
 
-       numero.abacaxi = 20
-       console.log(numero)
-
-       const arr = []
-       arr.abacaxi = "teste"
-
-       function Teste() {}
-
-       Teste.abacaxi = "teste abacaxi"
-    
+        contador.incrementar()
+        console.log(contador.valorAtual())
     </script>
 </body>
 </html>
