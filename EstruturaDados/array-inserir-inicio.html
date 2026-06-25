@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Inserir</title>
+</head>
+<body>
+    
+    <script>
+        arr = [1,2,3,4] 
+        
+        // inserir no final da array
+        arr[arr.length] = 8
+
+        arr.push(3)
+        arr.push(4,1,0,8,7)
+        console.log(arr)
+
+        arr = [1, 2, 3]
+        
+        function inserirComeco(valorInserir, lista) {
+            for(i = 0; 0 < i; i++) {
+                lista[lista.lenght] = lista[lista.lenght - 1]
+                console.log(lista)
+            }
+            return lista
+        }
+
+        arr = inserirComeco("a", arr)
+    </script>
+
+</body>
+</html>
