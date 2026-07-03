@@ -8,7 +8,7 @@
 <body>
     
     <script>
-        const arr = [1,2,3,4] 
+        arr = [1,2,3,4] 
         
         // inserir no final da array
         arr[arr.length] = 8
@@ -16,7 +16,21 @@
         arr.push(3)
         arr.push(4,1,0,8,7)
         console.log(arr)
+
+        arr = [1, 2, 3]
+        //           [0, 1, 2]
+        const arr2 = [1, 2, 3] // length = 3 / ultimo indice é 2
+
         
+        for (let i = arr2.length; i >= 0; i--) {
+            arr2[i] = arr2[i - 1]
+        }
+        arr2[0] = 20
+
+        
+
+        arr2.unshift(0, 7,6,5)
+        console.log(arr2)
         
     </script>
 
