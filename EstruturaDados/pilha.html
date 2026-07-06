@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilha</title>
+</head>
+<body>
+    
+    <script>
+       class Pilha {
+        constructor(){
+            this.pilha = []
+        }
+
+        // adicionar elemento na pilha
+        adicionar(novoElemento){
+            this.pilha.push(novoElemento)
+        }
+
+        // remover elemento da pilha
+        remover(){
+            if(this.estaVazia()){
+                throw new Error("A pilha está vazia")
+            }
+            return this.pilha.pop()
+        }
+
+        // verificar se a pilha está vazia
+        estaVazia(){
+            return this.pilha.length === 0
+        }
+
+        // espiar o elemento do topo da pilha
+        espiar(){
+            if(this.estaVazia()) {
+                return null
+            }
+            return this.pilha[this.pilha.length - 1]
+        }
+
+        // limpar a pilha
+        limpar(){
+            this.pilha.length = 0
+        }
+
+        // obter o número de elementos da pilha
+        get tamanho(){
+            return this.pilha.length
+        }
+       }
+    </script>
+
+</body>
+</html>
