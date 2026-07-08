@@ -17,9 +17,18 @@
             this.limite = tamanhoLimite || null
         }
 
+        // obter o número de elementos da pilha
+        get tamanho(){
+            return this.pilha.length
+        }
+
         // adicionar elemento na pilha
         adicionar(novoElemento){
-            this.pilha.push(novoElemento)
+            if (this.limite === null || this.tamanho < this.limite) {
+                this.pilha.push(novoElemento)
+            } else {
+                throw new Error("Esta pilha pode armazenar apenas " + this.limite + " elementos");
+            }
         }
 
         // remover elemento da pilha
@@ -48,10 +57,6 @@
             this.pilha.length = 0
         }
 
-        // obter o número de elementos da pilha
-        get tamanho(){
-            return this.pilha.length
-        }
        }
 
        const minhaPilha = new Pilha(10)
