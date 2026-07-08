@@ -9,8 +9,12 @@
     
     <script>
        class Pilha {
-        constructor(){
+        constructor(tamanhoLimite){
+            if (tamanhoLimite && tamanhoLimite <= 0) {
+                throw new Error("limite não pode ser menor ou igual a zero")
+            }
             this.pilha = []
+            this.limite = tamanhoLimite || null
         }
 
         // adicionar elemento na pilha
@@ -50,7 +54,7 @@
         }
        }
 
-       const minhaPilha = new Pilha()
+       const minhaPilha = new Pilha(10)
        console.log(minhaPilha.estaVazia()) // true
        minhaPilha.adicionar(1)
        minhaPilha.adicionar(2)
