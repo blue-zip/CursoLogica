@@ -17,18 +17,14 @@
             this.limite = tamanhoLimite || null
         }
 
-        // obter o número de elementos da pilha
-        get tamanho(){
-            return this.pilha.length
-        }
+        
 
         // adicionar elemento na pilha
         adicionar(novoElemento){
-            if (this.limite === null || this.tamanho < this.limite) {
-                this.pilha.push(novoElemento)
-            } else {
-                throw new Error("Esta pilha pode armazenar apenas " + this.limite + " elementos");
+            if (this.limite !== null && this.tamanho === this.limite) {
+                throw new Error("Tamanho da pilha atingido") // Stack overflow
             }
+            this.pilha.push(novoElemento)
         }
 
         // remover elemento da pilha
@@ -57,15 +53,27 @@
             this.pilha.length = 0
         }
 
+        // obter o número de elementos da pilha
+        get tamanho(){
+            return this.pilha.length
+        }
+
        }
 
-       const minhaPilha = new Pilha(10)
+       const minhaPilha = new Pilha(3)
        console.log(minhaPilha.estaVazia()) // true
        minhaPilha.adicionar(1)
        minhaPilha.adicionar(2)
        minhaPilha.adicionar(3)
        console.log(minhaPilha.estaVazia()) //false
        console.log(minhaPilha.espiar()) // 3
+
+       try{
+            minhaPilha.adicionar(4)
+       } catch(e) {
+            console.log(e)
+            console.log(e.message)
+       }
        minhaPilha.remover()
        minhaPilha.remover()
        console.log(minhaPilha.espiar()) // 1
