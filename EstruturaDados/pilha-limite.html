@@ -21,7 +21,7 @@
 
         // adicionar elemento na pilha
         adicionar(novoElemento){
-            if (this.limite !== null && this.tamanho === this.limite) {
+            if (this.estaCheia()) {
                 throw new Error("Tamanho da pilha atingido") // Stack overflow
             }
             this.pilha.push(novoElemento)
@@ -33,6 +33,11 @@
                 throw new Error("A pilha está vazia")
             }
             return this.pilha.pop()
+        }
+
+        //verificar se a pilha esta cheia
+        estaCheia(){
+            return this.limite !== null && this.tamanho === this.limite
         }
 
         // verificar se a pilha está vazia
