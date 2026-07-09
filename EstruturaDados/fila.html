@@ -47,8 +47,18 @@
         }
        }
 
+       const minhaFila = new Fila()
+       console.log(minhaFila.estaVazia()) // true
+       minhaFila.enfileirar("Primeiro")
+       minhaFila.enfileirar("Segundo")
+       minhaFila.enfileirar("Terceiro")
+       console.log(minhaFila.espiar()) // Primeiro
+       console.log(minhaFila.desenfileirar()) // Primeiro
+       console.log(minhaFila.tamanho) // 2
+       console.log(minhaFila.estaVazia()) // false
+       minhaFila.limpar()
+       console.log(minhaFila.estaVazia()) // true
        
-
     </script>
 
 </body>
