@@ -9,12 +9,16 @@
     
     <script>
        class Fila { // Queue
-        constructor(){
+        constructor(limite){
             this.fila = [] // queue
+            this.tamanhoLimite = limite || null
         }
 
         // enfileirar um elemento na fila
         enfileirar(novoElemento){ // enqueue()
+            if(this.tamanho >= this.tamanhoLimite && this.tamanhoLimite !== null){
+                throw new Error("A fila comporta apenas " + this.tamanhoLimite + " elementos")
+            }
             this.fila.push(novoElemento)
         }
 
@@ -47,7 +51,7 @@
         }
        }
 
-       const minhaFila = new Fila()
+       const minhaFila = new Fila(2)
        console.log(minhaFila.estaVazia()) // true
        minhaFila.enfileirar("Primeiro")
        minhaFila.enfileirar("Segundo")
