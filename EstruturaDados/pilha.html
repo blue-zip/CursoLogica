@@ -8,31 +8,31 @@
 <body>
     
     <script>
-       class Pilha {
+       class Pilha { // stack
         constructor(){
             this.pilha = []
         }
 
         // adicionar elemento na pilha
-        adicionar(novoElemento){
+        adicionar(novoElemento){ // push()
             this.pilha.push(novoElemento)
         }
 
         // remover elemento da pilha
         remover(){
-            if(this.estaVazia()){
+            if(this.estaVazia()){ //pop()
                 throw new Error("A pilha está vazia")
             }
             return this.pilha.pop()
         }
 
         // verificar se a pilha está vazia
-        estaVazia(){
+        estaVazia(){ //isEmpty()
             return this.pilha.length === 0
         }
 
         // espiar o elemento do topo da pilha
-        espiar(){
+        espiar(){ //peek()
             if(this.estaVazia()) {
                 return null
             }
@@ -40,12 +40,12 @@
         }
 
         // limpar a pilha
-        limpar(){
+        limpar(){ // clear()
             this.pilha.length = 0
         }
 
         // obter o número de elementos da pilha
-        get tamanho(){
+        get tamanho(){ // size
             return this.pilha.length
         }
        }
