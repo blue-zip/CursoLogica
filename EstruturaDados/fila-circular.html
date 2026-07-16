@@ -15,17 +15,6 @@
             }
 
             adicionar(novoItem) {
-                // filaCircular recem-criada
-                if(this.filaCircular.length == 0) {
-                    this.itemAtual = 0
-                    this.filaCircular[0] = novoItem
-                }
-                // filaCircular esta cheia e o itemAtual esta no final da fila 
-                if(this.itemAtual == this.limite) {
-                    this.filaCircular.shift()
-                    this.itemAtual = 5
-                    this.filaCircular[5] = novoItem
-                }
                 // itemAtual não esta no final o proximo item existe
                 if(this.filaCircular[this.filaCircular.length] != undefined) {
                     this.filaCircular[this.itemAtual] = novoItem
@@ -34,10 +23,26 @@
                     }
                     this.itemAtual = this.filaCircular.length - 1
                 }
-                if(this.filaCircular[this.filaCircular.length] == undefined && !(this.filaCircular.length == 0)) {
-                    this.itemAtual = this.filaCircular.length - 1 
-                    this.filaCircular[this.filaCircular.length] = novoItem
+                // filaCircular esta cheia e o itemAtual esta no final da fila 
+                if(this.filaCircular.length == this.limite) {
+                    this.filaCircular.shift()
+                    console.log("teste 3")
+                    this.filaCircular[3] = novoItem
                 }
+                
+                if(this.filaCircular[0] != undefined && this.itemAtual < 4) {
+                    this.itemAtual = this.filaCircular.length 
+                    this.filaCircular[this.filaCircular.length] = novoItem
+                    console.log("teste 2")
+                }
+                // filaCircular recem-criada
+                if(this.filaCircular.length == 0) {
+                    this.itemAtual = 0
+                    this.filaCircular[0] = novoItem
+                    console.log("teste 1")
+                }
+                
+                
             }
 
             avancar() {
