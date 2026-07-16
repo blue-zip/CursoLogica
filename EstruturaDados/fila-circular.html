@@ -10,35 +10,62 @@
         class FilaCircular {
             constructor() {
                 this.filaCircular = []
-                this.itemAtual = null
+                this.itemAtual = undefined
                 this.limite = 5
             }
 
             adicionar(novoItem) {
-                if(this.filaCircular = []) {
-                    this.filaCircular[0] = novoItem
+                // filaCircular recem-criada
+                if(this.filaCircular.length == 0) {
                     this.itemAtual = 0
+                    this.filaCircular[0] = novoItem
                 }
-                if(this.filaCircular.length = this.limite) {
+                // filaCircular esta cheia e o itemAtual esta no final da fila 
+                if(this.itemAtual == this.limite) {
                     this.filaCircular.shift()
                     this.itemAtual = 5
                     this.filaCircular[5] = novoItem
                 }
-                if(this.itemAtual < this.limite) {
+                // itemAtual não esta no final o proximo item existe
+                if(this.filaCircular[this.filaCircular.length] != undefined) {
                     this.filaCircular[this.itemAtual] = novoItem
                     for(let i = this.itemAtual; i < 5 ; i++) {
                         this.filaCircular[i] = undefined
                     }
                     this.itemAtual = this.filaCircular.length - 1
                 }
-            }
-
-            irProximo() {
-                if(this.filaCircular[this.filaCircular.length] = undefined) {
-                    
+                if(this.filaCircular[this.filaCircular.length] == undefined && !(this.filaCircular.length == 0)) {
+                    this.itemAtual = this.filaCircular.length - 1 
+                    this.filaCircular[this.filaCircular.length] = novoItem
                 }
             }
+
+            avancar() {
+                // lista esta cheia
+                if(this.itemAtual == this.limite) {
+                    throw new Error("Limite da lista atingido")
+                }
+                // não existe um proximo item
+                if(this.filaCircular[this.filaCircular.length] == undefined) {
+                    throw new Error("Não existe um proximo item")
+                }
+                // se o proximo item existe
+                this.itemAtual += 1
+                
+            }
+
+            voltar() {
+                // não existe um item anterior
+                if(this.itemAtual - 1 == undefined) {
+                    throw new Error("Não existe um item anterior")
+                }
+                // se o item anterior existe
+                this.itemAtual -= 1
+                
+            }
         }
+
+        const historicoNavegaçao = new FilaCircular
     </script>
 </body>
 </html>
