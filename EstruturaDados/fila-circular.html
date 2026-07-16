@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fila Circular</title>
+</head>
+<body>
+    <script>
+        class FilaCircular {
+            constructor() {
+                this.filaCircular = []
+                this.itemAtual = null
+                this.limite = 5
+            }
+
+            adicionar(novoItem) {
+                if(this.filaCircular = []) {
+                    this.filaCircular[0] = novoItem
+                    this.itemAtual = 0
+                }
+                if(this.filaCircular.length = this.limite) {
+                    this.filaCircular.shift()
+                    this.itemAtual = 5
+                    this.filaCircular[5] = novoItem
+                }
+                if(this.itemAtual < this.limite) {
+                    this.filaCircular[this.itemAtual] = novoItem
+                    for(let i = this.itemAtual; i < 5 ; i++) {
+                        this.filaCircular[i] = undefined
+                    }
+                    this.itemAtual = this.filaCircular.length - 1
+                }
+            }
+
+            irProximo() {
+                if(this.filaCircular[this.filaCircular.length] = undefined) {
+                    
+                }
+            }
+        }
+    </script>
+</body>
+</html>
