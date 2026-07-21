@@ -15,27 +15,31 @@
             }
 
             adicionar(novoItem) {
-                // itemAtual não esta no final e o proximo item existe
-                if(this.filaCircular[0] != undefined && this.itemAtual < 4 && this.filaCircular[this.itemAtual + 1] != undefined) {
-                    console.log("teste 4")
-                    this.filaCircular[this.itemAtual] = novoItem
-                    for(let i = this.itemAtual; i < 5 ; i++) {
-                        this.filaCircular[i] = undefined
-                    }
-                    this.itemAtual = this.filaCircular.length - 1
-                }
                 // filaCircular esta cheia e o itemAtual esta no final da fila 
-                if(this.filaCircular.length == this.limite && this.itemAtual == 4) {
+                if(this.filaCircular.length == 5 && this.itemAtual == 4) {
                     this.filaCircular.shift()
                     console.log("teste 3")
                     this.filaCircular[4] = novoItem
                 }
+
                 // itemAtual não esta no final e não existe um proximo item
                 if(this.filaCircular[0] != undefined && this.itemAtual < 4 && this.filaCircular[this.itemAtual + 1] == undefined) {
                     this.itemAtual = this.filaCircular.length 
                     this.filaCircular[this.filaCircular.length] = novoItem
                     console.log("teste 2")
                 }
+
+                // itemAtual não esta no final e o proximo item existe
+                if(this.filaCircular[0] != undefined && this.itemAtual < 4 && this.filaCircular[this.itemAtual + 1] != undefined) {
+                    console.log("teste 4")
+                    this.filaCircular[this.itemAtual + 1] = novoItem
+                    for(let i = this.itemAtual; i < 5 ; i++) {
+                        this.filaCircular[i + 2] = undefined
+                    }
+                    this.itemAtual += 1
+                    this.filaCircular.length = this.itemAtual + 1
+                }
+
                 // filaCircular recem-criada
                 if(this.filaCircular.length == 0) {
                     this.itemAtual = 0
@@ -51,10 +55,12 @@
                 if(this.itemAtual + 1 == this.limite) {
                     throw new Error("Limite da lista atingido")
                 }
+
                 // não existe um proximo item
                 if(this.filaCircular[this.filaCircular.length] == undefined) {
                     throw new Error("Não existe um proximo item")
                 }
+
                 // se o proximo item existe
                 this.itemAtual += 1
                 
@@ -70,6 +76,7 @@
                     // a lista foi criada recentemente por tanto não existe para onde voltar
                     throw new Error("Não existe um item anterior")
                 }
+
                 // se o item anterior existe
                 this.itemAtual -= 1
                 
