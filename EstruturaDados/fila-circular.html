@@ -51,11 +51,6 @@
             }
 
             avancar() {
-                // lista esta cheia
-                if(this.itemAtual + 1 == this.limite) {
-                    throw new Error("Limite da lista atingido")
-                }
-
                 // não existe um proximo item
                 if(this.filaCircular[this.filaCircular.length] == undefined) {
                     throw new Error("Não existe um proximo item")
