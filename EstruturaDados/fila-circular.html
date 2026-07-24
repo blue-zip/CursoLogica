@@ -67,18 +67,16 @@
             }
 
             voltar() {
-                try {
-                    // não existe um item anterior
-                    if(this.filaCircular[itemAtual - 1] == undefined) {
-                        throw new Error("Não existe um item anterior")
-                    }    
-                } catch (error) {
-                    // a lista foi criada recentemente por tanto não existe para onde voltar
+                if(this.filaCircular.length == 0) { // lista recem-criada
+                    throw new Error("A lista esta vazia")
+                } else if(this.itemAtual < 1) { // o item atual e o primeiro
                     throw new Error("Não existe um item anterior")
+                } else {
+                    // item anterior existe
+                    this.itemAtual -= 1
                 }
 
-                // se o item anterior existe
-                this.itemAtual -= 1
+                
                 
             }
         }
