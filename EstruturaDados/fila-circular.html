@@ -17,10 +17,8 @@
             adicionar(novoItem) {
                 // filaCircular esta cheia e o itemAtual esta no final da fila 
                 if(this.filaCircular.length == 5 && this.itemAtual == 4) {
-                    if(novoItem == undefined || novoItem == false) {
-                        throw new Error("Valor invalido")
-                    }
-                    novoItem = String(novoItem)
+                    
+                    
                     this.filaCircular.shift()
                     console.log("teste 3")
                     this.filaCircular[4] = novoItem
@@ -28,10 +26,8 @@
 
                 // itemAtual não esta no final e não existe um proximo item
                 if(this.filaCircular[0] != undefined && this.itemAtual < 4 && this.filaCircular[this.itemAtual + 1] == undefined) {
-                    if(novoItem == undefined || novoItem == false) {
-                        throw new Error("Valor invalido")
-                    }
-                    novoItem = String(novoItem)
+                    
+                    
                     this.itemAtual = this.filaCircular.length 
                     this.filaCircular[this.filaCircular.length] = novoItem
                     console.log("teste 2")
@@ -39,10 +35,8 @@
 
                 // itemAtual não esta no final e o proximo item existe
                 if(this.filaCircular[0] != undefined && this.itemAtual < 4 && this.filaCircular[this.itemAtual + 1] != undefined) {
-                    if(novoItem == undefined || novoItem == false) {
-                        throw new Error("Valor invalido")
-                    }
-                    novoItem = String(novoItem)
+                    
+                    
                     console.log("teste 4")
                     this.filaCircular[this.itemAtual + 1] = novoItem
                     for(let i = this.itemAtual; i < 5 ; i++) {
@@ -54,13 +48,14 @@
 
                 // filaCircular recem-criada
                 if(this.filaCircular.length == 0) {
-                    if(novoItem == undefined || novoItem == false) {
-                        throw new Error("Valor invalido")
+                    if(typeof novoItem === "string" || novoItem instanceof String) {
+                        this.itemAtual = 0
+                        this.filaCircular[0] = novoItem
+                        console.log("teste 1")
+                    } else {
+                        
                     }
-                    novoItem = String(novoItem)
-                    this.itemAtual = 0
-                    this.filaCircular[0] = novoItem
-                    console.log("teste 1")
+                    
                 }
                 
                 
@@ -92,7 +87,7 @@
             }
         }
 
-        const historicoNavegaçao = new FilaCircular
+        const historico = new FilaCircular
     </script>
 </body>
 </html>
