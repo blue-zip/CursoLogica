@@ -49,11 +49,15 @@
                 // filaCircular recem-criada
                 if(this.filaCircular.length == 0) {
                     if(typeof novoItem === "string" || novoItem instanceof String) {
-                        this.itemAtual = 0
-                        this.filaCircular[0] = novoItem
-                        console.log("teste 1")
+                        if (novoItem === "") {
+                            throw new Error("O historico não aceita items vazios")
+                        } else {
+                            this.itemAtual = 0
+                            this.filaCircular[0] = novoItem
+                            console.log("teste 1")
+                        }
                     } else {
-                        
+                        throw new Error("O historico aceita apenas texto")
                     }
                     
                 }
