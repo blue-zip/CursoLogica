@@ -17,7 +17,7 @@
             }
 
             adicionar(item){
-                this.fila.lenght = this.#ponteiro + 1
+                this.fila.length = this.#ponteiro + 1
 
                 if(this.estaCheia()) {
                     this.fila.shift()
@@ -35,8 +35,8 @@
             }
 
             avancar(){
-                if(this.#ponteiro < this.tamanho - 1) {
-                    this.ponteiro++
+                if(this.#ponteiro < this.limite - 1) {
+                    this.#ponteiro++
                 }
             }
 
