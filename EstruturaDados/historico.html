@@ -7,6 +7,13 @@
 </head>
 <body>
 
+    <button onclick="voltar()">Voltar</button>
+    <input type="text" id="input">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="avancar()">Avancar</button>
+    <button onclick="limpar()">Limpar Histórico</button>
+    <div id="output"></div>
+
     <script>
         class Historico{
             #ponteiro
@@ -31,13 +38,18 @@
             voltar(){
                 if(this.#ponteiro > 0){
                     this.#ponteiro--
+                    return true
                 }
+                return false
             }
 
             avancar(){
-                if(this.#ponteiro < this.limite - 1) {
+                // if(this.#ponteiro < this.limite - 1) {
+                if(this.#ponteiro < this.tamanho - 1) {
                     this.#ponteiro++
+                    return true
                 }
+                return false
             }
 
             estaCheia(){
@@ -51,14 +63,47 @@
             imprimir(){
                 console.log(this.fila.toString())
                 console.log("ponteiro", this.#ponteiro)
+                return this.fila.toString() + " - ponteiro atual: " + this.#ponteiro + " - item atual: " + this.fila[this.#ponteiro]
+            }
+
+            limpar(){
+                this.fila.length = 0
+                this.#ponteiro = -1
             }
         }
 
         const historico = new Historico(5)
 
+        function voltar(){
+            const ok = historico.voltar()
+            if(ok){
+                imprimir()
+            }
+        }
 
+        function avancar(){
+            const ok = historico.avancar()
+            ok && imprimir()
+        }
 
-        
+        function adicionar(){
+            const input = document.getElementById("input")
+            if(input.value){
+                historico.adicionar(input.value)
+                imprimir()
+                input.value = ""
+                input.focus()
+            }
+        }
+
+        function imprimir(){
+            document.getElementById("output").textContent = historico.imprimir()
+        }
+
+        function limpar() {
+            historico.limpar()
+            document.getElementById("output").textContent = ""
+        }
 
     </script>
 </body>
