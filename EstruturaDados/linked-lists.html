@@ -61,6 +61,18 @@
                     }
 
                     const newNode = new Node(value)
+
+                    let current = this.head
+                    let prev = null
+
+                    for (let i = 0; i < position; i++){
+                        prev = current
+                        current = current.next
+                    }
+
+                    newNode.next = current
+                    prev.next = newNode
+                    this.#size++
                 }
             }
 
@@ -103,7 +115,9 @@
         list.prepend(2)
         list.print()
 
-        list.insertAt(100, 4)
+        list.insertAt(2, 100)
+        list.insertAt(5, 200)
+        list.print()
 
     </script>
 </body>
