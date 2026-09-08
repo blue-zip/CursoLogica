@@ -63,15 +63,21 @@
             }
 
             isEmpty(){
-
+                return this.head === null
             }
 
-            size(){
-
+            get size(){
+                return this.#size
             }
 
             print(){
-
+                let current = this.head
+                let result = ""
+                while (current) {
+                    result += current.value + " --> "
+                    current = current.next
+                }
+                console.log(result + " --- Size:" + this.#size)
             }
         }
 
