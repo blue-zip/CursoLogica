@@ -46,6 +46,25 @@
                 this.#size++
             }
 
+            pop(){ // remove o ultimo
+                if (this.tail){
+                    const last = this.tail
+                    const value = last.value
+
+                    if (this.#size === 1){
+                        this.head = null
+                        this.tail = null
+                        this.#size = 0
+                        return value
+                    }
+                }
+                return null
+            }
+
+            shift(){ // remove o primeiro
+
+            }
+
             remove(value){ // remover o valor
 
             }
