@@ -26,7 +26,17 @@
             }
 
             append(value){  // adiciona no final da lista
+                const newNode = new Node(value)
 
+                if(this.head === null){
+                    this.head = newNode
+                    this.tail = newNode
+                } else {
+                    const last = this.tail
+                    last.next = newNode
+                    this.tail = newNode
+                }
+                this.#size
             }
 
             prepend(value){ // adiciona no inicio da lista
