@@ -40,7 +40,10 @@
             }
 
             prepend(value){ // adiciona no inicio da lista
-
+                const newNode = new Node(value)
+                newNode.next = this.head
+                this.head = newNode
+                this.#size++
             }
 
             remove(value){ // remover o valor
