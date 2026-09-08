@@ -51,7 +51,17 @@
             }
 
             insertAt(position, value){ // insere novo valor no meio
+                if (position >= 0 &&  position <= this.#size) {
+                    if (position === 0){
+                        return this.prepend(value)
+                    }
 
+                    if (position === this.#size) {
+                        return this.append(value)
+                    }
+
+                    const newNode = new Node(value)
+                }
             }
 
             removeAt(position){ // remove valor do meio (posicao)
@@ -92,6 +102,8 @@
         list.print()
         list.prepend(2)
         list.print()
+
+        list.insertAt(100, 4)
 
     </script>
 </body>
