@@ -170,8 +170,19 @@
                 return null
             }
 
-            indexOf(valor){ // retorna a posicao do valor
+            indexOf(value){ // retorna a posicao do valor
+                let current = this.head
+                
+                while(current){
+                    for (let i = 0; i < this.#size; i++){
+                        if (current.value === value){
+                            return value + " esta na posicao " + i
+                        }
 
+                        current = current.next
+                    }
+                    return "valor nao encontrado"
+                }
             }
 
             isEmpty(){
@@ -222,6 +233,8 @@
 
         console.log("removi: ", list.removeAt(3))
         list.print()
+
+        console.log(list.indexOf(20))
  
         // list.remove(20)
         // list.print()
