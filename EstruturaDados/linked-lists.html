@@ -96,7 +96,25 @@
             }
 
             remove(value){ // remover o valor
+                let current = this.head
+                let prev = null
 
+                while (current){
+                    if (current.value === value){
+                        if(prev){
+                            prev.next = current.next
+                            current.next = null
+                        } else {
+                            this.head = current.next
+                            current.next = null
+                        }
+                        this.#size--
+                        return true
+                    }
+                    prev = current
+                    current = current.next
+                }
+                return false
             }
 
             insertAt(position, value){ // insere novo valor no meio
@@ -170,6 +188,9 @@
         list.insertAt(5, 200)
         list.print()
 
+        list.remove(20)
+        list.print()
+
         console.log("removi pop: ", list.pop() )
         list.print()
 
@@ -179,6 +200,14 @@
         list.print()
         console.log("removi pop: ", list.pop() )
         list.print()
+
+        list.remove(100)
+        list.print()
+
+        list.remove(10)
+        list.print()
+
+        
 
         
 
