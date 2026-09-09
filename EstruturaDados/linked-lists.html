@@ -57,6 +57,19 @@
                         this.#size = 0
                         return value
                     }
+
+                    let current = this.head
+                    let prev = null
+
+                    while (current !== last) {
+                        prev = current
+                        current = current.next
+                    }
+
+                    prev.next = null
+                    this.tail = prev
+                    this.#size--
+                    return value
                 }
                 return null
             }
@@ -125,6 +138,8 @@
         const list = new LinkedList()
         // list = {head: null, tail: null, size: 0}
         console.log(list.isEmpty())
+        console.log("removi: ", list.pop() )
+        list.print()
         list.append(10)
         list.print()
         list.append(20)
@@ -136,6 +151,9 @@
 
         list.insertAt(2, 100)
         list.insertAt(5, 200)
+        list.print()
+
+        console.log("removi: ", list.pop() )
         list.print()
 
     </script>
