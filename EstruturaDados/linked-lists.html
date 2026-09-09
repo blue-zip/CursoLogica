@@ -75,7 +75,24 @@
             }
 
             shift(){ // remove o primeiro
+                if (this.head){
+                    const first = this.head
+                    const value = first.value
+                    const next = first.next
 
+                    if (this.#size === 1) {
+                        this.tail = null
+                        this.head = null
+                        this.#size = 0
+                        return value
+                    }
+
+                    first.next = null
+                    this.head = next
+                    this.#size--
+                    return value
+                }
+                return null
             }
 
             remove(value){ // remover o valor
@@ -153,8 +170,17 @@
         list.insertAt(5, 200)
         list.print()
 
-        console.log("removi: ", list.pop() )
+        console.log("removi pop: ", list.pop() )
         list.print()
+
+        console.log("removi shift: ", list.shift() )
+        list.print()
+        console.log("removi shift: ", list.shift() )
+        list.print()
+        console.log("removi pop: ", list.pop() )
+        list.print()
+
+        
 
     </script>
 </body>
