@@ -43,6 +43,11 @@
                 const newNode = new Node(value)
                 newNode.next = this.head
                 this.head = newNode
+
+                if (this.#size === 0){
+                    this.tail = newNode
+                }
+
                 this.#size++
             }
 
@@ -120,11 +125,13 @@
             insertAt(position, value){ // insere novo valor no meio
                 if (position >= 0 &&  position <= this.#size) {
                     if (position === 0){
-                        return this.prepend(value)
+                        this.prepend(value)
+                        return true
                     }
 
                     if (position === this.#size) {
-                        return this.append(value)
+                        this.append(value)
+                        return true
                     }
 
                     const newNode = new Node(value)
@@ -140,7 +147,10 @@
                     newNode.next = current
                     prev.next = newNode
                     this.#size++
+
+                    return true
                 }
+                return false
             }
 
             removeAt(position){ // remove valor do meio (posicao)
@@ -278,9 +288,18 @@
         // list.remove(10)
         // list.print()
 
-        
+        console.clear()
 
-        
+        const list2 = new LinkedList()
+
+        list2.prepend(5)
+        list2.prepend(4)
+        list2.prepend(3)
+
+        list2.print()
+
+        console.log(list2.indexOf(50))
+        console.log(list2)
 
     </script>
 </body>
