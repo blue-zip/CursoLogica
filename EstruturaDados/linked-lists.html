@@ -108,9 +108,18 @@
                     if (current.value === value){
                         if(prev){
                             prev.next = current.next
+                            // Se o no removido for tail, atualiza o  tail
+                            if (current === this.tail) {
+                                this.tail = prev
+                            }
                             current.next = null
                         } else {
                             this.head = current.next
+                            // Se removemos o único elemento da lista, atualiza o tail
+
+                            if (current === this.tail) {
+                                this.tail = null
+                            }
                             current.next = null
                         }
                         this.#size--
@@ -300,6 +309,8 @@
 
         console.log(list2.indexOf(50))
         console.log(list2)
+
+        
 
     </script>
 </body>
