@@ -182,18 +182,17 @@
                 return -1
             }
 
-            lastIndexOf() {
+            lastIndexOf(value) {
                 let current = this.head
-                const last = this.tail
+                let lastIndex = -1
 
                 for (let i = 0; i < this.#size; i++){
-                    if (current = last){
-                        return current.value
+                    if (current.value === value) {
+                        lastIndex = i
                     }
-                    current = current.next
+                    current = current.next                    
                 }
-                return null
-
+                return lastIndex
             }
 
             isEmpty(){
@@ -251,7 +250,14 @@
         console.log("removi: ", list.pop() )
         console.log("removi: ", list.pop() )
 
-        console.log(list.lastIndexOf())
+        list.append(1)
+        list.append(2)
+        list.append(3)
+        list.append(1)
+        list.append(2)
+        list.append(4)
+
+        console.log(list.lastIndexOf(0))
  
         // list.remove(20)
         // list.print()
