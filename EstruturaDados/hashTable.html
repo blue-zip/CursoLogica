@@ -19,16 +19,29 @@
         }
 
         class LinkedList{
-            #size
+            #size 
             constructor(){
                 this.head = null
                 this.tail = null
                 this.#size = 0
             }
 
-            append(key ,value){  // adiciona no final da lista
+            append(key, value, replace){  // adiciona no final da lista
 
                 //primeiro, vamos verificar se a chave já existe
+                let current = this.head
+
+                while(current){
+                    if(current.key === key){
+                        if(replace){
+                            current.value = value
+                        } else {
+                            throw Error("Chave já existe. Mude a chave ou passe true no terceiro para subtituir o valor da chave existente")
+                        }
+                        return undefined
+                    }
+                    current = current.next
+                }
 
                 const newNode = new HashNode(key ,value)
 
