@@ -111,12 +111,28 @@
         }
 
         class HashTable{
-            constructor(){
+            #size
+            constructor(maxSize){
+                this.#size = 0
+                this.table = []
+                this.max = maxSize
+            }
 
+            hash(key){
+                let hashValue = 0
+                for(let i = 0; i < key.length; i++){
+                    hashValue += key.charCodeAt(i)
+                }
+                return hashValue % this.max
             }
         }
 
-        
+        const table = new HashTable(97) // 97 e número primo e funciona melhor em tabelas hash
+        table.insert("daniel@serliv.com", "Daniel Morales")
+        table.get("daniel@serliv.com")
+        table.remove("daniel@serliv.com")
+        table.remove("daniel@gmail.com")
+        table.get("daniel@serliv.com")
 
         
 
