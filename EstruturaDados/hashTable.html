@@ -38,7 +38,7 @@
                         } else {
                             throw Error("Chave já existe. Mude a chave ou passe true no terceiro para subtituir o valor da chave existente")
                         }
-                        return undefined
+                        return false
                     }
                     current = current.next
                 }
@@ -54,6 +54,7 @@
                     this.tail = newNode
                 }
                 this.#size++
+                return true
             }
 
             getByKey(key){
@@ -65,7 +66,7 @@
                     }
                     current = current.next
                 }
-                return false
+                return undefined
             }
 
 
@@ -124,6 +125,32 @@
                     hashValue += key.charCodeAt(i)
                 }
                 return hashValue % this.max
+            }
+
+            insert(key, value){
+                const index = this.hash(key)
+                if(this.table[index] === undefined){
+                    this.table[index] = new LinkedList()
+                }
+                
+                const result = this.table[index].append(key, value)
+                if(result){
+                    this.size++
+                }
+            }
+
+            get(key){
+                const index = this.hash(key)
+
+                if(this.table[index] !== undefined){
+                    //já temos uma linked list
+                    return this.table[index].getByKey(key)
+                }
+                return undefined
+            }
+
+            remove(key){
+                
             }
         }
 
